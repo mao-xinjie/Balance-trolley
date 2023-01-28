@@ -1,2 +1,2 @@
 # Balance-trolley
-Self-made balance trolley control panel based on STM32
+自制基于STM32的平衡车控制板
