@@ -2,6 +2,7 @@
 #include "Delay.h"
 #include "OLED.h"
 #include "AD.h"
+#include "Serial.h"
 
 uint16_t ADValue;
 float Voltage;
@@ -12,6 +13,8 @@ int main(void)
 {
 	OLED_Init();
 	AD_Init();
+	Serial_Init();
+	Serial_SendByte(0x41);
 	
 	OLED_ShowString(1, 1, "ADValue:");
 	OLED_ShowString(2, 1, "Volatge:00.00V");
