@@ -1,6 +1,4 @@
 #include "stm32f10x.h"                  // Device header
-#include "Wheel.h"
-#include "PWM.h"
 
 void Wheel_Init(void)//对相应的IO口进行初始化,
 {

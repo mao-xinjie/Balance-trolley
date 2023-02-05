@@ -28,4 +28,3 @@
 .\objects\sensor.o: .\Library\stm32f10x_usart.h
 .\objects\sensor.o: .\Library\stm32f10x_wwdg.h
 .\objects\sensor.o: .\Library\misc.h
-.\objects\sensor.o: Hardware\Sensor.h

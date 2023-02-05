@@ -28,5 +28,3 @@
 .\objects\wheel.o: .\Library\stm32f10x_usart.h
 .\objects\wheel.o: .\Library\stm32f10x_wwdg.h
 .\objects\wheel.o: .\Library\misc.h
-.\objects\wheel.o: Hardware\Wheel.h
-.\objects\wheel.o: Hardware\PWM.h

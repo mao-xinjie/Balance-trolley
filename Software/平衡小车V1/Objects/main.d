@@ -30,4 +30,4 @@
 .\objects\main.o: .\Library\misc.h
 .\objects\main.o: .\System\Delay.h
 .\objects\main.o: .\Hardware\OLED.h
-.\objects\main.o: .\Hardware\Key.h
+.\objects\main.o: .\Hardware\AD.h
