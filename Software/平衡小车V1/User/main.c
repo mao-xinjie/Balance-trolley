@@ -1,4 +1,4 @@
-//#include "stm32f10x.h"                  // Device header
+//#include "stm32f10x.h"                 
 //#include "Delay.h"
 //#include "OLED.h"
 //#include "AD.h"
