@@ -1,4 +1,4 @@
-//#include "stm32f10x.h"             rrrrrr    
+//#include "stm32f10x.h"               
 //#include "Delay.h"
 //#include "OLED.h"
 //#include "AD.h"
@@ -14,9 +14,9 @@
 //{
 //	OLED_Init();
 //	AD_Init();
-//	Serial_Init();
-//	Serial_SendByte(0x41);
-//	printf("\r\n%d", 222);
+////	Serial_Init();
+////	Serial_SendByte(0x41);
+////	printf("\r\n%d", 22);
 //	
 //	OLED_ShowString(1, 1, "ADValue:");
 //	OLED_ShowString(2, 1, "Volatge:00.00V");
@@ -26,7 +26,7 @@
 //		ADValue = AD_GetValue();
 //		Voltage = (float)ADValue / 4095 * 12;
 //		
-//		printf("\r\n%d", -ADValue);
+////		printf("\r\n%d", -ADValue);
 //		OLED_ShowNum(1, 9, ADValue, 4);
 //		OLED_ShowNum(2, 9, Voltage, 2);
 //		OLED_ShowNum(2, 12, (uint16_t)(Voltage * 100) % 100, 2);
@@ -78,3 +78,26 @@ int main(void)
 	}
 }
 
+
+
+//#include "stm32f10x.h"               
+//#include "Delay.h"
+//#include "OLED.h"
+//#include "Serial.h"
+
+//#include "PWM.h"    
+//#include "Wheel.h"  
+
+//int sensor[6]={0,0,0,0,0,0};
+
+//int main(void)
+//{
+//	PWM_Init();
+//	Wheel_Init();
+//	PWM_SetCompare1(5000);
+//	
+//	while (1)
+//	{
+//	forward();
+//	}
+//}

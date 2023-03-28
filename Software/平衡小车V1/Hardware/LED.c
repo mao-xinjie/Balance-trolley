@@ -1,5 +1,8 @@
 #include "stm32f10x.h"                  // Device header
 
+
+//LED引脚初始化函数
+
 void LED_Init(void)
 {
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
@@ -12,6 +15,9 @@ void LED_Init(void)
 	
 	GPIO_SetBits(GPIOB, GPIO_Pin_8 | GPIO_Pin_9);
 }
+
+
+//绿色LED  /开 、关 、转换
 
 void LEDG_ON(void)
 {
@@ -34,6 +40,9 @@ void LEDG_Turn(void)
 		GPIO_ResetBits(GPIOB, GPIO_Pin_8);
 	}
 }
+
+
+//蓝色LED  /开 、关 、转换
 
 void LEDB_ON(void)
 {

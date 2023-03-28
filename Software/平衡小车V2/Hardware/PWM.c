@@ -1,9 +1,9 @@
 #include "stm32f10x.h"                  // Device header
-
+#include "Wheel.h"  
+#include <stdlib.h>
 
 
 /*
-TIM3 作为电机驱动
 
 */
 void PWM_Init(void)
@@ -22,7 +22,7 @@ void PWM_Init(void)
 	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;
 	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;
 	TIM_TimeBaseInitStructure.TIM_Period = 100 - 1;		//ARR
-	TIM_TimeBaseInitStructure.TIM_Prescaler = 720 - 1;		//PSC
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 36 - 1;		//PSC
 	TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;
 	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseInitStructure);
 	
@@ -32,18 +32,41 @@ void PWM_Init(void)
 	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
 	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
 	TIM_OCInitStructure.TIM_Pulse = 0;		//CCR
-	
 	TIM_OC1Init(TIM3, &TIM_OCInitStructure);
 	TIM_OC2Init(TIM3, &TIM_OCInitStructure);
 	TIM_Cmd(TIM3, ENABLE);
 }
 
-void PWM_SetCompare1(uint16_t Compare)
+void M1PWM(int16_t Compare)
 {
 	TIM_SetCompare1(TIM3, Compare);
 }
 
-void PWM_SetCompare2(uint16_t Compare)
+void M2PWM(int16_t Compare)
 {
 	TIM_SetCompare2(TIM3, Compare);
+}
+
+void Car_RUN(int16_t Speed1,int16_t Speed2)
+{	
+	if (Speed1 >= 0)
+	{
+		M1_forward();		
+	}
+	else
+	{
+		M1_backward();
+	}
+	
+	if (Speed2 >= 0)
+	{
+		M2_forward();
+	}
+	else
+	{
+		M2_backward();
+	}
+
+	M1PWM(abs(Speed1));						
+	M2PWM(abs(Speed2));	
 }

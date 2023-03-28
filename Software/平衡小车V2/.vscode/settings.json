@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "atomic": "cpp",
+        "cstdint": "cpp"
+    },
+    "C_Cpp.intelliSenseEngineFallback": "disabled", 
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+}
